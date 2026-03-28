@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -73,22 +75,35 @@ export default function Hero() {
                         </span>.
                     </motion.p>
 
-                    {/* BUTTONS */}
+
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
                         className="flex items-center justify-center gap-4"
                     >
-                        <button className="bg-primary text-white px-6 py-3 text-sm rounded-full 
-                        hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
-                            Start Journey
-                        </button>
 
-                        <button className="px-6 py-3 text-sm rounded-full border border-border text-text 
-                        bg-surface/80 hover:bg-primary-light transition-all duration-300">
-                            View Portfolio
-                        </button>
+                        {/* CONTACT BUTTON */}
+                        <Link
+                            href="/contact"
+                            className="group bg-primary text-white px-6 py-3 text-sm rounded-full 
+        hover:bg-primary-dark transition-all duration-300 
+        shadow-md hover:shadow-lg hover:scale-105 flex items-center gap-2"
+                        >
+                            Start Journey
+                            <ArrowRight size={14} className="group-hover:translate-x-1 transition" />
+                        </Link>
+
+                        {/* SERVICES BUTTON */}
+                        <Link
+                            href="/services"
+                            className="px-6 py-3 text-sm rounded-full border border-border text-text 
+        bg-surface/80 hover:bg-primary-light transition-all duration-300 
+        hover:scale-105"
+                        >
+                            View Services
+                        </Link>
+
                     </motion.div>
 
                     {/* TRUST LINE */}
