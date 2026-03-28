@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// 🚀 ULTRA SEO METADATA
+/* 🚀 ULTRA SEO METADATA */
 export const metadata = {
   metadataBase: new URL("https://evatechsolutions.in"),
 
@@ -16,15 +16,12 @@ export const metadata = {
     "Evatech Solutions LLP is a leading IT services company in India providing AI solutions, cloud computing, data center services, document digitization, OCR, CCTV, ERP systems, GIS technology, automation, and secure digital transformation solutions.",
 
   keywords: [
-    // 🔥 BRAND VARIATIONS (VERY IMPORTANT)
     "Evatech Solutions",
     "Evatech Solutions LLP",
     "Evatech",
     "Eva Tech Solutions",
-    "EvaTech Solutions India",
-    "Evatech company India",
+    "Evatech India",
 
-    // 🔥 SERVICES
     "IT services company India",
     "AI solutions company India",
     "cloud computing services India",
@@ -36,45 +33,32 @@ export const metadata = {
     "GIS technology services",
     "automation solutions company",
 
-    // 🔥 HIGH INTENT SEARCHES
     "best IT company India",
     "top AI company India",
     "cloud service provider India",
     "digital transformation company India",
     "IT consulting company India",
-
-    // 🔥 LONG TAIL (VERY POWERFUL)
-    "AI cloud ERP digitization company India",
-    "data digitization and OCR services provider",
-    "enterprise IT automation solutions company",
-    "secure data storage and backup solutions India",
   ],
 
   authors: [{ name: "Evatech Solutions LLP" }],
   creator: "Evatech Solutions LLP",
   publisher: "Evatech Solutions LLP",
 
-  category: "technology",
-
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
 
+  /* ✅ FINAL ICON FIX (VERY IMPORTANT) */
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16" },
-      { url: "/favicon-32x32.png", sizes: "32x32" },
-    ],
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 
@@ -112,19 +96,23 @@ export const metadata = {
   },
 };
 
+/* 🚀 ROOT LAYOUT */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* 🔥 THEME */}
+        {/* 🔥 BASIC META */}
         <meta name="theme-color" content="#0f172a" />
-
-        {/* 🔥 EXTRA SEO BOOST */}
         <meta name="application-name" content="Evatech Solutions LLP" />
         <meta name="apple-mobile-web-app-title" content="Evatech Solutions" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* 🔥 ORGANIZATION + BRAND AUTHORITY */}
+        {/* 🔥 CRITICAL: FAVICON FIX */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        {/* 🔥 ORGANIZATION SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -168,7 +156,7 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* 🔥 LOCAL BUSINESS (VERY POWERFUL FOR INDIA SEO) */}
+        {/* 🔥 LOCAL BUSINESS SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
