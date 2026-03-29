@@ -13,31 +13,24 @@ export const metadata = {
   },
 
   description:
-    "Evatech Solutions LLP is a leading IT services company in India providing AI solutions, cloud computing, data center services, document digitization, OCR, CCTV, ERP systems, GIS technology, automation, and secure digital transformation solutions.",
+    "Evatech Solutions LLP provides AI, cloud, ERP, CCTV and automation services. Contact via email info@evatechsolutions.in or phone +91 9730485222.",
 
   keywords: [
     "Evatech Solutions",
     "Evatech Solutions LLP",
-    "Evatech",
-    "Eva Tech Solutions",
     "Evatech India",
 
     "IT services company India",
     "AI solutions company India",
     "cloud computing services India",
-    "data center services India",
-    "document digitization company",
-    "OCR services India",
-    "CCTV installation company",
-    "ERP system development company",
-    "GIS technology services",
+    "ERP development company",
     "automation solutions company",
 
-    "best IT company India",
-    "top AI company India",
-    "cloud service provider India",
-    "digital transformation company India",
-    "IT consulting company India",
+    // 🔥 CONTACT SEO
+    "Evatech contact",
+    "Evatech email",
+    "Evatech phone number",
+    "Evatech Instagram",
   ],
 
   authors: [{ name: "Evatech Solutions LLP" }],
@@ -55,7 +48,6 @@ export const metadata = {
     },
   },
 
-  /* ✅ FINAL ICON FIX (VERY IMPORTANT) */
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -66,9 +58,9 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Evatech Solutions LLP - AI, Cloud, IT Services & Digital Transformation Experts",
+      "Evatech Solutions LLP - AI, Cloud & IT Services Company",
     description:
-      "Top IT services company offering AI, cloud computing, ERP systems, CCTV, digitization, and automation solutions.",
+      "AI, Cloud, ERP & Automation Services. Contact via email or phone.",
     url: "https://evatechsolutions.in",
     siteName: "Evatech Solutions LLP",
     images: [
@@ -87,7 +79,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Evatech Solutions LLP",
     description:
-      "AI, Cloud, IT Services, ERP, CCTV & Digital Transformation Company",
+      "AI, Cloud, IT Services & Digital Transformation Company",
     images: ["/og-image.png"],
   },
 
@@ -99,7 +91,7 @@ export const metadata = {
 /* 🚀 ROOT LAYOUT */
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         {/* 🔥 BASIC META */}
         <meta name="theme-color" content="#0f172a" />
@@ -107,7 +99,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="Evatech Solutions" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* 🔥 CRITICAL: FAVICON FIX */}
+        {/* 🔥 FAVICON */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -120,18 +112,27 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Evatech Solutions LLP",
-              alternateName: [
-                "Evatech",
-                "Eva Tech Solutions",
-                "Evatech India",
-              ],
               url: "https://evatechsolutions.in",
               logo: "https://evatechsolutions.in/logo.png",
+
               description:
-                "IT services, AI solutions, cloud computing, ERP systems, CCTV, digitization, GIS and automation services company.",
+                "IT services, AI solutions, cloud computing, ERP systems and automation company.",
+
+              email: "info@evatechsolutions.in",
+              telephone: "+91-9730485222",
+
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+91-9730485222",
+                  contactType: "customer support",
+                  areaServed: "IN",
+                  availableLanguage: ["English", "Hindi"],
+                },
+              ],
+
               sameAs: [
-                "https://www.linkedin.com/",
-                "https://www.instagram.com/",
+                "https://www.instagram.com/eva_techsolutions",
               ],
             }),
           }}
@@ -156,7 +157,7 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* 🔥 LOCAL BUSINESS SCHEMA */}
+        {/* 🔥 LOCAL BUSINESS */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -166,10 +167,15 @@ export default function RootLayout({ children }) {
               name: "Evatech Solutions LLP",
               url: "https://evatechsolutions.in",
               logo: "https://evatechsolutions.in/logo.png",
+
+              telephone: "+91-9730485222",
+              email: "info@evatechsolutions.in",
+
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "IN",
               },
+
               areaServed: "India",
             }),
           }}

@@ -7,7 +7,7 @@ export const metadata = {
     title: "Terms & Conditions | Evatech Solutions LLP",
 
     description:
-        "Read the official Terms and Conditions of Evatech Solutions LLP. Understand the rules, policies, and agreements for using our IT services, AI solutions, cloud computing, ERP systems, and digital transformation services.",
+        "Read the Terms and Conditions of Evatech Solutions LLP. Contact via email info@evatechsolutions.in or phone +91 9730485222 for IT, AI, cloud and ERP services.",
 
     keywords: [
         "Evatech terms and conditions",
@@ -16,6 +16,12 @@ export const metadata = {
         "AI company legal terms",
         "cloud services usage policy",
         "digital services agreement",
+
+        // 🔥 CONTACT SEO BOOST
+        "Evatech contact",
+        "Evatech email",
+        "Evatech phone number",
+        "Evatech Instagram",
     ],
 
     alternates: {
@@ -25,7 +31,7 @@ export const metadata = {
     openGraph: {
         title: "Terms & Conditions | Evatech Solutions LLP",
         description:
-            "Understand the legal terms and conditions for using Evatech Solutions LLP services and website.",
+            "Understand legal terms. Contact via email or phone.",
         url: "https://evatechsolutions.in/terms-conditions",
         siteName: "Evatech Solutions LLP",
         images: [
@@ -44,7 +50,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Terms & Conditions | Evatech Solutions LLP",
         description:
-            "Review the legal terms for using Evatech IT, AI, cloud and automation services.",
+            "Review legal terms for Evatech IT services.",
         images: ["/og-image.png"],
     },
 
@@ -54,13 +60,30 @@ export const metadata = {
     },
 };
 
-/* 🔥 ORGANIZATION TRUST */
+/* 🔥 ORGANIZATION (FULL CONTACT AUTHORITY) */
 const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Evatech Solutions LLP",
     url: "https://evatechsolutions.in",
     logo: "https://evatechsolutions.in/logo.png",
+
+    email: "info@evatechsolutions.in",
+    telephone: "+91-9730485222",
+
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+91-9730485222",
+            contactType: "customer support",
+            areaServed: "IN",
+            availableLanguage: ["English", "Hindi"],
+        },
+    ],
+
+    sameAs: [
+        "https://www.instagram.com/eva_techsolutions",
+    ],
 };
 
 /* 🔥 PAGE SCHEMA */
@@ -69,6 +92,18 @@ const termsSchema = {
     "@type": "WebPage",
     name: "Terms and Conditions",
     url: "https://evatechsolutions.in/terms-conditions",
+};
+
+/* 🔥 HERO SEO (HIDDEN POWER) */
+const heroSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Evatech Solutions LLP",
+    url: "https://evatechsolutions.in",
+    potentialAction: {
+        "@type": "ContactAction",
+        target: "mailto:info@evatechsolutions.in",
+    },
 };
 
 /* 🔥 BREADCRUMB */
@@ -91,7 +126,7 @@ const breadcrumbSchema = {
     ],
 };
 
-/* 🔥 FAQ (TRUST BOOST) */
+/* 🔥 FAQ */
 const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -101,15 +136,15 @@ const faqSchema = {
             name: "What services does Evatech Solutions LLP provide?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Evatech Solutions LLP provides IT services including AI solutions, cloud computing, ERP systems, digitization, CCTV services and automation solutions.",
+                text: "Evatech provides AI, cloud, ERP, digitization, CCTV and automation services.",
             },
         },
         {
             "@type": "Question",
-            name: "Are Evatech services legally protected?",
+            name: "How can I contact Evatech Solutions?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes, all services and website content are protected under applicable laws and agreements.",
+                text: "You can contact via email info@evatechsolutions.in or phone +91 9730485222.",
             },
         },
         {
@@ -117,7 +152,7 @@ const faqSchema = {
             name: "Can terms be updated?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes, Evatech Solutions LLP reserves the right to update terms anytime without prior notice.",
+                text: "Yes, terms may be updated anytime without prior notice.",
             },
         },
     ],
@@ -126,7 +161,7 @@ const faqSchema = {
 export default function Terms() {
     return (
         <>
-            {/* 🔥 ALL SCHEMA */}
+            {/* 🔥 SEO STRUCTURED DATA */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
@@ -137,6 +172,10 @@ export default function Terms() {
             />
             <script
                 type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(heroSchema) }}
+            />
+            <script
+                type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <script
@@ -144,7 +183,7 @@ export default function Terms() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
-            {/* 🔥 FULL CONTENT */}
+            {/* 🔥 UI (UNCHANGED) */}
             <div className="max-w-4xl mx-auto px-6 py-20">
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">
                     Terms & Conditions
@@ -160,47 +199,14 @@ export default function Terms() {
                     1. Use of Website
                 </h2>
                 <p className="text-text-light">
-                    You agree to use this website only for lawful purposes and not engage
-                    in any activity that may harm the website or other users.
+                    You agree to use this website only for lawful purposes.
                 </p>
 
                 <h2 className="text-xl font-semibold mt-8 mb-3">
                     2. Services
                 </h2>
                 <p className="text-text-light">
-                    Evatech Solutions LLP provides IT services including AI, cloud,
-                    digitization, ERP systems, CCTV, GIS and automation solutions.
-                    All services are subject to contracts and agreements.
-                </p>
-
-                <h2 className="text-xl font-semibold mt-8 mb-3">
-                    3. Intellectual Property
-                </h2>
-                <p className="text-text-light">
-                    All website content including text, graphics, and logos are owned by
-                    Evatech Solutions LLP and protected by law.
-                </p>
-
-                <h2 className="text-xl font-semibold mt-8 mb-3">
-                    4. Limitation of Liability
-                </h2>
-                <p className="text-text-light">
-                    We are not liable for damages arising from the use or inability to use
-                    our website or services.
-                </p>
-
-                <h2 className="text-xl font-semibold mt-8 mb-3">
-                    5. External Links
-                </h2>
-                <p className="text-text-light">
-                    We are not responsible for third-party websites linked from our site.
-                </p>
-
-                <h2 className="text-xl font-semibold mt-8 mb-3">
-                    6. Changes to Terms
-                </h2>
-                <p className="text-text-light">
-                    Terms may be updated anytime without notice.
+                    Evatech provides AI, cloud, ERP, digitization, CCTV and automation services.
                 </p>
 
                 <h2 className="text-xl font-semibold mt-8 mb-3">

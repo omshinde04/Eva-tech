@@ -90,49 +90,53 @@ export default function ContactForm() {
     return (
         <section
             id="contact-form"
-            className="relative py-20 md:py-28 bg-background overflow-hidden"
+            className="relative pt-12 pb-20 sm:pt-14 sm:pb-24 md:pt-16 md:pb-28 bg-primary overflow-hidden"
         >
-            {/* GRID BG */}
-            <div className="absolute inset-0 z-0 opacity-20">
-                <div className="w-full h-full 
-        bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),
-        linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)]
-        bg-[size:40px_40px]" />
+
+            {/* 🔥 PREMIUM BACKGROUND */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50" />
+
+                <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-accent/10 blur-3xl rounded-full" />
+                <div className="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-accentSoft/10 blur-3xl rounded-full" />
             </div>
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10">
+            <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 md:px-10">
+
                 <motion.form
                     onSubmit={handleSubmit}
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    className="bg-surface/90 backdrop-blur border border-border rounded-3xl 
-          p-6 md:p-10 shadow-soft space-y-6"
+                    viewport={{ once: true }}
+                    className="bg-white/80 backdrop-blur-md border border-borderSubtle rounded-3xl 
+        p-5 sm:p-6 md:p-10 shadow-xl space-y-6 sm:space-y-7"
                 >
 
-                    {/* HEADER */}
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-text">
+                    {/* 🔥 HEADER */}
+                    <div className="text-center sm:text-left">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-semibold text-textPrimary">
                             Send us a message
                         </h2>
-                        <p className="text-text-light text-sm mt-2">
+
+                        <p className="text-textSecondary text-sm sm:text-base mt-2">
                             We’ll get back to you within 24 hours.
                         </p>
                     </div>
 
-                    {/* STATUS MESSAGE */}
+                    {/* 🔥 STATUS */}
                     {status.message && (
                         <div
-                            className={`p-3 rounded-xl text-sm font-medium ${status.type === "success"
-                                ? "bg-green-100 text-green-700"
-                                : "bg-red-100 text-red-600"
+                            className={`p-3 rounded-xl text-sm font-medium border ${status.type === "success"
+                                ? "bg-green-50 text-green-700 border-green-200"
+                                : "bg-red-50 text-red-600 border-red-200"
                                 }`}
                         >
                             {status.message}
                         </div>
                     )}
 
-                    {/* INPUTS */}
-                    <div className="grid md:grid-cols-2 gap-5">
+                    {/* 🔥 INPUT GRID */}
+                    <div className="grid md:grid-cols-2 gap-4 sm:gap-5">
 
                         {/* NAME */}
                         <input
@@ -142,8 +146,9 @@ export default function ContactForm() {
                             onChange={handleChange}
                             placeholder="Your Name"
                             required
-                            className="p-3 rounded-xl border border-border bg-background 
-              outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
+                            className="p-3 sm:p-3.5 rounded-xl border border-borderSubtle bg-white 
+            outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 
+            transition placeholder:text-textMuted"
                         />
 
                         {/* EMAIL */}
@@ -154,8 +159,9 @@ export default function ContactForm() {
                             onChange={handleChange}
                             placeholder="Your Email"
                             required
-                            className="p-3 rounded-xl border border-border bg-background 
-              outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
+                            className="p-3 sm:p-3.5 rounded-xl border border-borderSubtle bg-white 
+            outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 
+            transition placeholder:text-textMuted"
                         />
 
                     </div>
@@ -167,8 +173,9 @@ export default function ContactForm() {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="Subject"
-                        className="w-full p-3 rounded-xl border border-border bg-background 
-            outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
+                        className="w-full p-3 sm:p-3.5 rounded-xl border border-borderSubtle bg-white 
+          outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 
+          transition placeholder:text-textMuted"
                     />
 
                     {/* MESSAGE */}
@@ -179,17 +186,20 @@ export default function ContactForm() {
                         onChange={handleChange}
                         placeholder="Tell us about your project..."
                         required
-                        className="w-full p-3 rounded-xl border border-border bg-background 
-            outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
+                        className="w-full p-3 sm:p-3.5 rounded-xl border border-borderSubtle bg-white 
+          outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 
+          transition resize-none placeholder:text-textMuted"
                     />
 
-                    {/* BUTTON */}
+                    {/* 🔥 BUTTON */}
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-primary text-white py-3 rounded-xl 
-            transition-all duration-300 shadow-md hover:shadow-xl 
-            disabled:opacity-70 flex items-center justify-center gap-2"
+                        className="w-full bg-gradient-to-r from-accent to-accentSoft text-white 
+          py-3 sm:py-3.5 rounded-xl font-medium 
+          transition-all duration-300 shadow-lg hover:shadow-2xl 
+          hover:scale-[1.02] disabled:opacity-70 
+          flex items-center justify-center gap-2"
                     >
                         {loading ? (
                             <>

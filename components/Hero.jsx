@@ -6,114 +6,119 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-            {/* GRID BACKGROUND */}
+        <section className="relative min-h-[92vh] flex items-center justify-center bg-primary overflow-hidden">
+
+            {/* GRID */}
             <div className="absolute inset-0 z-0">
-                <div className="w-full h-full 
-                bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)] 
-                bg-[size:36px_36px] opacity-40"></div>
-
-                {/* LEFT GLOW */}
-                <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-primary/10 blur-3xl rounded-full"></div>
-
-                {/* RIGHT GLOW */}
-                <div className="absolute bottom-[-100px] right-[-100px] w-[400px] h-[400px] bg-blue-400/10 blur-3xl rounded-full"></div>
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `
+              linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px)
+            `,
+                        backgroundSize: "48px 48px",
+                    }}
+                />
+                <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-white/60 to-transparent" />
             </div>
-
-            {/* FLOATING ELEMENTS (SUBTLE PREMIUM TOUCH) */}
-            <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 6, repeat: Infinity }}
-                className="hidden md:block absolute left-10 top-32 w-24 h-24 bg-white shadow-soft rounded-xl border border-border opacity-70"
-            />
-
-            <motion.div
-                animate={{ y: [0, 20, 0] }}
-                transition={{ duration: 7, repeat: Infinity }}
-                className="hidden md:block absolute right-10 bottom-32 w-28 h-28 bg-white shadow-soft rounded-xl border border-border opacity-70"
-            />
 
             {/* CONTENT */}
             <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10">
 
-                <div className="flex flex-col items-center text-center gap-8">
+                <div className="flex flex-col items-center text-center gap-7 md:gap-10">
 
                     {/* BADGE */}
                     <motion.div
-                        initial={{ opacity: 0, y: 15 }}
+                        initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="px-4 py-1.5 rounded-full border border-border bg-surface/70 backdrop-blur text-xs text-text-light shadow-sm"
+                        className="px-4 py-1.5 rounded-full border border-borderSubtle bg-white text-xs text-textSecondary shadow-sm"
                     >
-                        🚀 Trusted by Next-Gen Enterprises
+                        Trusted by modern businesses
                     </motion.div>
 
                     {/* HEADING */}
                     <motion.h1
-                        initial={{ opacity: 0, y: 60 }}
+                        initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight text-text max-w-4xl"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-semibold tracking-tight text-textPrimary max-w-5xl leading-[1.1]"
                     >
-                        Architecting the{" "}
-                        <span className="bg-gradient-to-r from-primary via-blue-500 to-purple-500 bg-clip-text text-transparent">
-                            Future
-                        </span>{" "}
-                        of Enterprise Tech
+                        Building the future of
+                        <span className="block text-accent mt-3">
+                            digital experiences
+                        </span>
                     </motion.h1>
 
                     {/* SUBTEXT */}
                     <motion.p
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-sm sm:text-base md:text-lg text-text-light max-w-2xl leading-relaxed"
+                        className="text-base sm:text-lg md:text-xl text-textSecondary max-w-2xl leading-relaxed"
                     >
-                        High-precision IT consulting and digital transformation for global leaders.
-                        We engineer{" "}
-                        <span className="text-primary font-medium">
-                            competitive advantages
-                        </span>.
+                        We deliver scalable web platforms, high-performance systems,
+                        and strategic digital solutions that help businesses grow faster
+                        and operate smarter.
                     </motion.p>
 
-
+                    {/* CTA */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="flex items-center justify-center gap-4"
+                        transition={{ delay: 0.3 }}
+                        className="flex flex-row gap-4 mt-2"
                     >
 
-                        {/* CONTACT BUTTON */}
                         <Link
                             href="/contact"
-                            className="group bg-primary text-white px-6 py-3 text-sm rounded-full 
-        hover:bg-primary-dark transition-all duration-300 
-        shadow-md hover:shadow-lg hover:scale-105 flex items-center gap-2"
+                            className="px-6 md:px-8 py-3 md:py-4 rounded-xl bg-accent text-white text-sm md:text-base font-medium 
+              hover:bg-accentSoft transition-all duration-300 shadow-soft 
+              flex items-center justify-center gap-2"
                         >
-                            Start Journey
-                            <ArrowRight size={14} className="group-hover:translate-x-1 transition" />
+                            Get Started
+                            <ArrowRight size={18} />
                         </Link>
 
-                        {/* SERVICES BUTTON */}
                         <Link
                             href="/services"
-                            className="px-6 py-3 text-sm rounded-full border border-border text-text 
-        bg-surface/80 hover:bg-primary-light transition-all duration-300 
-        hover:scale-105"
+                            className="px-6 md:px-8 py-3 md:py-4 rounded-xl border border-borderSubtle text-textPrimary text-sm md:text-base
+              hover:border-borderStrong hover:bg-secondary transition-all duration-300"
                         >
-                            View Services
+                            Services
                         </Link>
 
                     </motion.div>
 
-                    {/* TRUST LINE */}
+                    {/* CLIENT TRUST */}
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.6 }}
-                        className="text-xs text-text-light"
+                        initial={{ opacity: 0, y: 25 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="flex flex-col items-center gap-3 pt-2"
                     >
-                        Powering startups → scaling enterprises
+
+                        <div className="flex -space-x-3">
+
+                            {["user1.jpg", "user2.jpg", "user3.jpg", "user4.jpg", "user5.jpg"].map((img, i) => (
+                                <img
+                                    key={i}
+                                    src={`/images/${img}`}
+                                    alt="client"
+                                    className="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-white object-cover hover:scale-105 transition"
+                                />
+                            ))}
+
+                            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-secondary border-2 border-white flex items-center justify-center text-xs text-textPrimary">
+                                +20
+                            </div>
+
+                        </div>
+
+                        <p className="text-sm text-textMuted text-center">
+                            Trusted by founders, startups & growing businesses
+                        </p>
+
                     </motion.div>
 
                 </div>

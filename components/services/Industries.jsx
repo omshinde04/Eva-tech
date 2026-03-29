@@ -7,7 +7,7 @@ import {
     GraduationCap,
     Briefcase,
     Truck,
-    Landmark
+    Landmark,
 } from "lucide-react";
 
 const industries = [
@@ -45,34 +45,35 @@ const industries = [
 
 export default function Industries() {
     return (
-        <section className="relative py-20 md:py-28 bg-background overflow-hidden">
+        <section className="relative pt-12 pb-20 sm:pt-14 sm:pb-24 md:pt-16 md:pb-28 bg-primary overflow-hidden">
 
-            {/* GRID BG */}
-            <div className="absolute inset-0 z-0">
-                <div className="w-full h-full 
-                bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)] 
-                bg-[size:42px_42px] opacity-20"></div>
+            {/* 🔥 PREMIUM BACKGROUND */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50" />
+
+                <div className="absolute top-[-120px] right-[-120px] w-[350px] h-[350px] bg-accent/10 blur-3xl rounded-full" />
+                <div className="absolute bottom-[-120px] left-[-120px] w-[350px] h-[350px] bg-accentSoft/10 blur-3xl rounded-full" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+            <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
 
-                {/* HEADER */}
-                <div className="text-center max-w-2xl mx-auto mb-14">
-                    <h2 className="text-3xl md:text-5xl font-bold text-text">
+                {/* 🔥 HEADER */}
+                <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-semibold text-textPrimary">
                         Industries We{" "}
-                        <span className="text-primary">
+                        <span className="bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent">
                             Serve
                         </span>
                     </h2>
 
-                    <p className="text-text-light mt-3 text-sm md:text-base">
-                        Delivering tailored technology solutions across diverse industries,
-                        helping organizations scale, innovate, and operate efficiently.
+                    <p className="text-textSecondary mt-3 text-sm md:text-base">
+                        Delivering tailored technology solutions across industries,
+                        enabling organizations to scale, innovate, and operate efficiently.
                     </p>
                 </div>
 
-                {/* GRID */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* 🔥 GRID */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
                     {industries.map((item, i) => {
                         const Icon = item.icon;
@@ -80,37 +81,42 @@ export default function Industries() {
                         return (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 40 }}
+                                initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                whileHover={{
-                                    y: -8,
-                                    scale: 1.02,
-                                }}
-                                className="group relative border border-border rounded-2xl bg-surface p-6 md:p-7 
-                                shadow-soft hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                                transition={{ delay: i * 0.08 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -8 }}
+                                className="group relative rounded-2xl overflow-hidden"
                             >
 
-                                {/* ICON */}
-                                <div className="mb-4 text-primary group-hover:scale-110 transition">
-                                    <Icon size={28} />
+                                <div className="relative h-full bg-white/80 backdrop-blur-md p-6 md:p-7 
+                rounded-2xl shadow-soft hover:shadow-2xl 
+                transition-all duration-500 flex flex-col">
+
+                                    {/* ICON */}
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-xl 
+                  bg-gradient-to-br from-accent to-accentSoft text-white 
+                  shadow-md group-hover:scale-110 transition duration-300">
+                                        <Icon size={22} />
+                                    </div>
+
+                                    {/* TITLE */}
+                                    <h3 className="text-lg md:text-xl font-semibold text-textPrimary mt-5">
+                                        {item.title}
+                                    </h3>
+
+                                    {/* DESC */}
+                                    <p className="text-textSecondary text-sm mt-3 leading-relaxed flex-grow">
+                                        {item.desc}
+                                    </p>
+
+                                    {/* LINE */}
+                                    <div className="mt-6 h-[2px] w-0 bg-gradient-to-r from-accent to-accentSoft group-hover:w-16 transition-all duration-500" />
+
+                                    {/* GLOW */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-accentSoft/5 opacity-0 group-hover:opacity-100 transition rounded-2xl" />
+
                                 </div>
-
-                                {/* TITLE */}
-                                <h3 className="text-lg md:text-xl font-semibold text-text group-hover:text-primary transition">
-                                    {item.title}
-                                </h3>
-
-                                {/* DESC */}
-                                <p className="text-text-light text-sm mt-3 leading-relaxed">
-                                    {item.desc}
-                                </p>
-
-                                {/* HOVER LINE */}
-                                <div className="mt-5 h-[2px] w-0 bg-primary group-hover:w-16 transition-all duration-500"></div>
-
-                                {/* GLOW */}
-                                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition"></div>
 
                             </motion.div>
                         );

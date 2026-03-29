@@ -9,41 +9,36 @@ export const metadata = {
     metadataBase: new URL("https://evatechsolutions.in"),
 
     title:
-        "Best IT Services Company in India | AI, Cloud, ERP, Digitization & Automation - Evatech Solutions LLP",
+        "Best IT Services Company in India | AI, Cloud, ERP & Automation - Evatech Solutions LLP",
 
     description:
-        "Evatech Solutions LLP is a top IT services company in India offering AI solutions, cloud computing, data center services, document digitization, OCR, ERP systems, CCTV installation, GIS technology, automation solutions, and enterprise digital transformation services.",
+        "Evatech Solutions LLP offers AI, cloud, ERP, digitization, CCTV and automation services. Contact via email info@evatechsolutions.in or phone +91 9730485222.",
 
     keywords: [
-        // 🔥 BRAND DOMINATION
         "Evatech Solutions",
         "Evatech Solutions LLP",
         "Evatech",
         "Eva Tech Solutions",
         "Evatech India",
 
-        // 🔥 CORE SERVICES
         "IT services company India",
         "AI solutions company India",
         "cloud computing services India",
         "data center services India",
         "document digitization services India",
-        "OCR services company India",
         "ERP solutions provider India",
         "CCTV installation company India",
-        "GIS technology services India",
         "automation solutions company India",
 
-        // 🔥 HIGH INTENT
         "best IT company India",
         "top AI company India",
-        "cloud service provider India",
         "digital transformation company India",
 
-        // 🔥 LONG TAIL
-        "AI cloud ERP digitization automation company India",
-        "enterprise IT services provider India",
-        "secure data storage backup solutions India",
+        // 🔥 CONTACT SEO BOOST
+        "Evatech contact",
+        "Evatech email",
+        "Evatech phone number",
+        "Evatech Instagram",
     ],
 
     alternates: {
@@ -54,7 +49,7 @@ export const metadata = {
         title:
             "Top IT, AI & Cloud Services Company | Evatech Solutions LLP",
         description:
-            "Explore AI, cloud, ERP, CCTV, GIS, digitization and automation solutions for modern businesses.",
+            "AI, cloud, ERP & automation services. Contact us via email or phone.",
         url: "https://evatechsolutions.in/services",
         siteName: "Evatech Solutions LLP",
         images: [
@@ -73,7 +68,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Evatech Services",
         description:
-            "AI, Cloud, IT Services, ERP, CCTV & Automation Solutions.",
+            "AI, Cloud, ERP & Automation Solutions.",
         images: ["/og-image.png"],
     },
 
@@ -83,7 +78,7 @@ export const metadata = {
     },
 };
 
-/* 🔥 SERVICE SCHEMA (STRONG) */
+/* 🔥 SERVICE SCHEMA */
 const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -99,16 +94,45 @@ const servicesSchema = {
     ],
 };
 
-/* 🔥 ORGANIZATION BOOST */
+/* 🔥 ORGANIZATION (UPGRADED WITH CONTACT + SOCIAL) */
 const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Evatech Solutions LLP",
     url: "https://evatechsolutions.in",
     logo: "https://evatechsolutions.in/logo.png",
+
+    email: "info@evatechsolutions.in",
+    telephone: "+91-9730485222",
+
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+91-9730485222",
+            contactType: "customer support",
+            areaServed: "IN",
+            availableLanguage: ["English", "Hindi"],
+        },
+    ],
+
+    sameAs: [
+        "https://www.instagram.com/eva_techsolutions",
+    ],
 };
 
-/* 🔥 BREADCRUMB (GOOGLE LOVES THIS) */
+/* 🔥 HERO SEO (HIDDEN POWER 🔥) */
+const heroSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Evatech Solutions LLP",
+    url: "https://evatechsolutions.in",
+    potentialAction: {
+        "@type": "ContactAction",
+        target: "mailto:info@evatechsolutions.in",
+    },
+};
+
+/* 🔥 BREADCRUMB */
 const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -128,7 +152,7 @@ const breadcrumbSchema = {
     ],
 };
 
-/* 🔥 FAQ SCHEMA (VERY POWERFUL 🚀) */
+/* 🔥 FAQ */
 const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -138,15 +162,15 @@ const faqSchema = {
             name: "What services does Evatech Solutions LLP provide?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "We provide AI solutions, cloud computing, ERP systems, CCTV services, document digitization, GIS technology, and automation solutions.",
+                text: "We provide AI, cloud, ERP, digitization, CCTV and automation services.",
             },
         },
         {
             "@type": "Question",
-            name: "Is Evatech a cloud and AI company?",
+            name: "How can I contact Evatech Solutions?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes, Evatech Solutions LLP specializes in AI, cloud infrastructure, and enterprise digital transformation.",
+                text: "You can contact via email info@evatechsolutions.in or phone +91 9730485222.",
             },
         },
         {
@@ -154,7 +178,7 @@ const faqSchema = {
             name: "Do you provide ERP and automation solutions?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes, we provide custom ERP systems and automation solutions tailored for businesses.",
+                text: "Yes, we provide custom ERP systems and automation solutions.",
             },
         },
     ],
@@ -163,6 +187,7 @@ const faqSchema = {
 export default function ServicesPage() {
     return (
         <>
+            {/* 🔥 SEO STRUCTURED DATA */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
@@ -170,6 +195,10 @@ export default function ServicesPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(heroSchema) }}
             />
             <script
                 type="application/ld+json"

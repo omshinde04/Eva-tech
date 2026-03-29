@@ -8,33 +8,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#005db5",
-        "primary-light": "#d6e3ff",
-        "primary-dark": "#0052a0",
+        // 🤍 BASE (NOT PURE WHITE)
+        primary: "#F9FAFB",        // main background
+        secondary: "#F3F4F6",      // section bg
+        surface: "#FFFFFF",        // cards
 
-        secondary: "#566069",
-        "secondary-light": "#dae4ee",
+        // 🎯 ACCENT (LIMITED USE)
+        accent: "#2563EB",         // premium blue
+        accentSoft: "#1D4ED8",
 
-        background: "#f8f9fa",
-        surface: "#ffffff",
+        // 📝 TEXT
+        textPrimary: "#111827",
+        textSecondary: "#4B5563",
+        textMuted: "#9CA3AF",
 
-        text: "#2b3437",
-        "text-light": "#586064",
+        // 🧊 UI
+        borderSubtle: "#E5E7EB",
+        borderStrong: "#D1D5DB",
 
-        border: "#dbe4e7",
-        outline: "#737c7f",
-
-        error: "#9f403d",
+        // STATES
+        error: "#DC2626",
+        success: "#16A34A",
       },
 
       fontFamily: {
-        headline: ["Manrope", "sans-serif"],
+        heading: ["Sora", "sans-serif"],
         body: ["Inter", "sans-serif"],
       },
 
       boxShadow: {
         soft: "0 4px 20px rgba(0,0,0,0.05)",
-        medium: "0 8px 30px rgba(0,0,0,0.08)",
+        medium: "0 10px 30px rgba(0,0,0,0.08)",
+        subtle: "0 0 0 1px rgba(0,0,0,0.04)",
       },
 
       borderRadius: {

@@ -1,19 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 🤍 BASE */
 body {
-  @apply bg-background text-text font-body;
+  @apply bg-primary text-textPrimary font-body antialiased;
 }
 
-/* Smooth UI feel */
+/* 🌐 SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
 }
 
-/* FIX ICON VISIBILITY */
+/* ✨ VERY SUBTLE DEPTH (NOT GLOW) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at top,
+      rgba(0, 0, 0, 0.03),
+      transparent 60%);
+}
+
+/* ✨ CLEAN SCROLLBAR */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* 🧠 SVG FIX */
 svg {
   display: inline-block;
   stroke: currentColor;
+}
+
+/* 🧊 CARD SYSTEM */
+.card {
+  @apply bg-surface border border-borderSubtle rounded-2xl p-6 shadow-soft transition;
+}
+
+.card:hover {
+  @apply shadow-medium border-borderStrong;
+}
+
+/* ⚡ BUTTON SYSTEM */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl bg-accent text-white font-medium hover:bg-accentSoft transition-all duration-300 shadow-soft;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl border border-borderSubtle text-textPrimary hover:border-borderStrong hover:bg-secondary transition-all duration-300;
+}
+
+/* 🔤 TEXT SYSTEM */
+.heading-xl {
+  @apply text-4xl md:text-5xl font-heading font-semibold tracking-tight;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-heading font-semibold;
+}
+
+.text-body {
+  @apply text-textSecondary text-lg leading-relaxed;
+}
+
+/* 💎 SECTION SPACING */
+.section {
+  @apply py-20 px-6 md:px-12 lg:px-20;
 }

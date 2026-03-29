@@ -7,29 +7,31 @@ export const metadata = {
     metadataBase: new URL("https://evatechsolutions.in"),
 
     title:
-        "Contact Evatech Solutions LLP | Best IT, AI & Cloud Company in India",
+        "Contact Evatech Solutions LLP | IT, AI & Cloud Company in India",
 
     description:
-        "Get in touch with Evatech Solutions LLP for AI solutions, cloud computing, ERP systems, CCTV services, document digitization and automation solutions. Contact the best IT company in India today.",
+        "Contact Evatech Solutions LLP via email (info@evatechsolutions.in), phone (+91 9730485222) for AI, cloud, ERP, CCTV and automation services in India.",
 
     keywords: [
-        // 🔥 BRAND
         "Evatech Solutions",
         "Evatech contact",
         "Evatech Solutions LLP contact",
         "Eva Tech Solutions contact",
 
-        // 🔥 HIGH INTENT
         "contact IT company India",
         "hire AI company India",
         "cloud computing company contact",
         "ERP solutions company contact India",
         "automation company contact India",
 
-        // 🔥 SERVICES
         "CCTV installation company contact",
         "document digitization company India contact",
         "data center services contact India",
+
+        // 🔥 NEW SEO BOOST
+        "Evatech email",
+        "Evatech phone number",
+        "Evatech Instagram",
     ],
 
     alternates: {
@@ -39,7 +41,7 @@ export const metadata = {
     openGraph: {
         title: "Contact Evatech Solutions LLP",
         description:
-            "Contact Evatech Solutions LLP for AI, cloud, ERP, CCTV and automation services.",
+            "Reach Evatech via email, phone for AI, cloud and IT solutions.",
         url: "https://evatechsolutions.in/contact",
         siteName: "Evatech Solutions LLP",
         images: [
@@ -58,7 +60,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Contact Evatech Solutions LLP",
         description:
-            "Reach out for IT, AI, Cloud & Digital Transformation Solutions.",
+            "Contact us for IT, AI, Cloud & Digital Transformation Solutions.",
         images: ["/og-image.png"],
     },
 
@@ -76,19 +78,39 @@ const contactSchema = {
     url: "https://evatechsolutions.in/contact",
 };
 
-/* 🔥 LOCAL BUSINESS (VERY POWERFUL FOR SEO) */
+/* 🔥 LOCAL BUSINESS (UPGRADED SEO POWER) */
 const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Evatech Solutions LLP",
     url: "https://evatechsolutions.in",
     logo: "https://evatechsolutions.in/logo.png",
+
     telephone: "+91-9730485222",
+    email: "info@evatechsolutions.in",
+
     address: {
         "@type": "PostalAddress",
         addressCountry: "IN",
     },
+
     areaServed: "India",
+
+    /* 🔥 CONTACT POINT (GOOGLE RICH RESULT BOOST) */
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+91-9730485222",
+            contactType: "customer support",
+            areaServed: "IN",
+            availableLanguage: ["English", "Hindi"],
+        },
+    ],
+
+    /* 🔥 SOCIAL SEO (NOT UI) */
+    sameAs: [
+        "https://www.instagram.com/eva_techsolutions",
+    ],
 };
 
 /* 🔥 BREADCRUMB */
@@ -121,7 +143,7 @@ const faqSchema = {
             name: "How can I contact Evatech Solutions LLP?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "You can contact Evatech Solutions LLP via phone, email, or the contact form available on our website.",
+                text: "You can contact Evatech Solutions LLP via email info@evatechsolutions.in or phone +91 9730485222.",
             },
         },
         {
@@ -146,6 +168,7 @@ const faqSchema = {
 export default function ContactPage() {
     return (
         <>
+            {/* 🔥 SEO STRUCTURED DATA */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}

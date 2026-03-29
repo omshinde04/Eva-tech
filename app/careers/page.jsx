@@ -8,7 +8,7 @@ export const metadata = {
         "Careers at Evatech Solutions LLP | IT, AI, Cloud Jobs & Opportunities in India",
 
     description:
-        "Explore career opportunities at Evatech Solutions LLP, a leading IT services company in India specializing in AI, cloud computing, ERP systems, digitization, and automation. Currently not hiring but open for future opportunities.",
+        "Explore career opportunities at Evatech Solutions LLP. Contact via email, phone or Instagram for future job opportunities in AI, cloud, ERP and automation.",
 
     keywords: [
         "Evatech careers",
@@ -19,6 +19,12 @@ export const metadata = {
         "software company careers India",
         "technology careers India",
         "digital transformation jobs India",
+
+        // 🔥 NEW CONTACT SEO
+        "Evatech contact",
+        "Evatech email",
+        "Evatech phone number",
+        "Evatech Instagram",
     ],
 
     alternates: {
@@ -28,7 +34,7 @@ export const metadata = {
     openGraph: {
         title: "Careers at Evatech Solutions LLP",
         description:
-            "Join Evatech Solutions LLP - experts in AI, cloud, ERP and automation solutions.",
+            "Join Evatech Solutions LLP. Contact via email, phone or Instagram for opportunities.",
         url: "https://evatechsolutions.in/careers",
         siteName: "Evatech Solutions LLP",
         images: [
@@ -57,13 +63,30 @@ export const metadata = {
     },
 };
 
-/* 🔥 ORGANIZATION */
+/* 🔥 ORGANIZATION (UPGRADED) */
 const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Evatech Solutions LLP",
     url: "https://evatechsolutions.in",
     logo: "https://evatechsolutions.in/logo.png",
+
+    email: "info@evatechsolutions.in",
+    telephone: "+91-9730485222",
+
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+91-9730485222",
+            contactType: "customer support",
+            areaServed: "IN",
+            availableLanguage: ["English", "Hindi"],
+        },
+    ],
+
+    sameAs: [
+        "https://www.instagram.com/eva_techsolutions",
+    ],
 };
 
 /* 🔥 CAREERS PAGE */
@@ -105,6 +128,14 @@ const faqSchema = {
             acceptedAnswer: {
                 "@type": "Answer",
                 text: "Currently, Evatech Solutions LLP is not hiring, but we welcome future applications.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How can I contact Evatech Solutions?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "You can contact Evatech via email info@evatechsolutions.in, phone +91 9730485222 or Instagram @eva_techsolutions.",
             },
         },
         {
@@ -197,6 +228,28 @@ export default function CareersPage() {
                     <p className="text-text-light">
                         📧 <strong>careers@evatechsolutions.in</strong>
                     </p>
+                </section>
+
+                {/* 🔥 NEW CONTACT SECTION (IMPORTANT FOR SEO + UX) */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-semibold mb-4">
+                        Contact Us
+                    </h2>
+
+                    <div className="space-y-3 text-text-light">
+                        <p>📧 Email: info@evatechsolutions.in</p>
+                        <p>📞 Phone: +91 9730485222</p>
+                        <p>
+                            📸 Instagram:{" "}
+                            <a
+                                href="https://www.instagram.com/eva_techsolutions"
+                                target="_blank"
+                                className="underline hover:text-primary"
+                            >
+                                @eva_techsolutions
+                            </a>
+                        </p>
+                    </div>
                 </section>
 
                 {/* CTA */}

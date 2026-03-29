@@ -12,12 +12,12 @@ const contactData = [
     },
     {
         title: "Call Us",
-        desc: "+91 98765 43210",
+        desc: "+91 9730485222",
         icon: Phone,
-        link: "tel:+919876543210",
+        link: "tel:+919730485222",
     },
     {
-        title: "Visit Us",
+        title: "Location",
         desc: "India",
         icon: MapPin,
         link: "https://maps.google.com",
@@ -26,39 +26,34 @@ const contactData = [
 
 export default function ContactInfo() {
     return (
-        <section
-            className="relative py-20 md:py-28 bg-background overflow-hidden">
+        <section className="relative pt-12 pb-20 sm:pt-14 sm:pb-24 md:pt-16 md:pb-28 bg-primary overflow-hidden">
 
-            {/* GRID BG */}
-            <div className="absolute inset-0 z-0 opacity-20">
-                <div className="w-full h-full 
-                bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),
-                linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)]
-                bg-[size:40px_40px]" />
+            {/* 🔥 PREMIUM BACKGROUND */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50" />
+
+                <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-accent/10 blur-3xl rounded-full" />
+                <div className="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-accentSoft/10 blur-3xl rounded-full" />
             </div>
 
-            {/* GLOW */}
-            <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-primary/10 blur-3xl rounded-full"></div>
-            <div className="absolute bottom-[-120px] right-[-120px] w-[300px] h-[300px] bg-green-400/10 blur-3xl rounded-full"></div>
+            <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 md:px-10">
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
-
-                {/* HEADER */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold text-text">
+                {/* 🔥 HEADER */}
+                <div className="text-center mb-12 sm:mb-14">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-semibold text-textPrimary">
                         Get in{" "}
-                        <span className="text-primary">
+                        <span className="bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent">
                             Touch
                         </span>
                     </h2>
 
-                    <p className="text-text-light mt-3 text-sm md:text-base">
+                    <p className="text-textSecondary mt-3 text-sm md:text-base max-w-xl mx-auto">
                         Reach out to us directly or start a conversation instantly.
                     </p>
                 </div>
 
-                {/* CARDS */}
-                <div className="grid md:grid-cols-3 gap-6">
+                {/* 🔥 CARDS */}
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
 
                     {contactData.map((item, i) => {
                         const Icon = item.icon;
@@ -69,56 +64,61 @@ export default function ContactInfo() {
                                 key={i}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                whileHover={{ y: -8, scale: 1.03 }}
-                                className="group relative p-[1px] rounded-2xl 
-                                bg-gradient-to-b from-transparent via-border to-transparent 
-                                hover:from-primary/40 hover:to-primary/20 transition-all duration-500"
+                                transition={{ delay: i * 0.08 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -6 }}
+                                className="group relative rounded-2xl overflow-hidden"
                             >
-                                <div className="bg-surface/90 backdrop-blur rounded-2xl p-6 md:p-7 text-center 
-                                shadow-soft group-hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+
+                                <div className="h-full bg-white/80 backdrop-blur-md p-6 md:p-7 
+                rounded-2xl shadow-soft hover:shadow-2xl 
+                transition-all duration-300 text-center flex flex-col items-center">
 
                                     {/* ICON */}
-                                    <div className="mb-4 text-primary group-hover:scale-110 transition">
-                                        <Icon size={28} />
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-xl 
+                  bg-gradient-to-br from-accent to-accentSoft text-white 
+                  shadow-md group-hover:scale-110 transition duration-300">
+                                        <Icon size={20} />
                                     </div>
 
                                     {/* TITLE */}
-                                    <h3 className="text-lg font-semibold text-text group-hover:text-primary transition">
+                                    <h3 className="text-base md:text-lg font-semibold text-textPrimary mt-5">
                                         {item.title}
                                     </h3>
 
                                     {/* DESC */}
-                                    <p className="text-text-light text-sm mt-2">
+                                    <p className="text-textSecondary text-sm mt-2">
                                         {item.desc}
                                     </p>
 
-                                    {/* HOVER LINE */}
-                                    <div className="mt-4 h-[2px] w-0 bg-primary group-hover:w-16 transition-all duration-500 mx-auto"></div>
+                                    {/* LINE */}
+                                    <div className="mt-4 h-[2px] w-0 bg-gradient-to-r from-accent to-accentSoft group-hover:w-14 transition-all duration-500" />
 
                                     {/* GLOW */}
-                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-accentSoft/5 opacity-0 group-hover:opacity-100 transition rounded-2xl" />
 
                                 </div>
+
                             </motion.a>
                         );
                     })}
 
                 </div>
 
-                {/* 💰 WHATSAPP SUPER CTA */}
+                {/* 🔥 WHATSAPP CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    className="mt-14 flex justify-center"
+                    viewport={{ once: true }}
+                    className="mt-12 sm:mt-14 flex justify-center"
                 >
                     <a
-                        href="https://wa.me/919876543210"
+                        href="https://wa.me/919730485222"
                         target="_blank"
-                        className="group flex items-center gap-3 px-8 py-4 rounded-full 
-                        bg-green-500 text-white font-medium text-sm md:text-base
-                        shadow-lg hover:shadow-2xl 
-                        hover:scale-105 transition-all duration-300"
+                        className="group flex items-center gap-3 px-7 py-3.5 rounded-xl 
+            bg-gradient-to-r from-green-500 to-green-600 text-white font-medium text-sm md:text-base
+            shadow-lg hover:shadow-2xl 
+            hover:scale-[1.05] transition-all duration-300"
                     >
                         <MessageCircle size={20} className="group-hover:scale-110 transition" />
                         Chat on WhatsApp

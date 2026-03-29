@@ -12,25 +12,28 @@ export const metadata = {
         "About Evatech Solutions LLP | Top IT, AI & Cloud Company in India",
 
     description:
-        "Evatech Solutions LLP is a leading IT services company in India specializing in AI solutions, cloud computing, data center services, document digitization, ERP systems, GIS technology, CCTV and automation solutions for digital transformation.",
+        "Evatech Solutions LLP is a leading IT services company in India specializing in AI solutions, cloud computing, data center services, document digitization, ERP systems, GIS technology, CCTV and automation solutions for digital transformation. Contact us via email, phone or Instagram.",
 
     keywords: [
-        // 🔥 BRAND
         "Evatech Solutions",
         "Evatech Solutions LLP",
         "Evatech",
         "Eva Tech Solutions",
         "Evatech India",
 
-        // 🔥 COMPANY SEARCH
         "about Evatech Solutions",
         "Evatech company India",
         "IT company profile India",
 
-        // 🔥 SERVICES CONTEXT
         "AI cloud ERP company India",
         "digital transformation company India",
         "automation solutions provider India",
+
+        // 🔥 NEW SEO KEYWORDS (CONTACT + SOCIAL)
+        "Evatech contact",
+        "Evatech email",
+        "Evatech phone number",
+        "Evatech Instagram",
     ],
 
     alternates: {
@@ -41,7 +44,7 @@ export const metadata = {
         title:
             "About Evatech Solutions LLP - AI, Cloud & IT Experts",
         description:
-            "Learn about Evatech Solutions LLP, a trusted IT services company delivering AI, cloud, ERP and automation solutions.",
+            "Learn about Evatech Solutions LLP. Contact via email (info@evatechsolutions.in), phone (+91 9730485222) or Instagram.",
         url: "https://evatechsolutions.in/about",
         siteName: "Evatech Solutions LLP",
         images: [
@@ -60,7 +63,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "About Evatech Solutions LLP",
         description:
-            "AI, Cloud, ERP & Digital Transformation Experts.",
+            "AI, Cloud, ERP & Digital Transformation Experts. Contact us anytime.",
         images: ["/og-image.png"],
     },
 
@@ -70,7 +73,7 @@ export const metadata = {
     },
 };
 
-/* 🔥 ORGANIZATION AUTHORITY */
+/* 🔥 ORGANIZATION AUTHORITY (UPGRADED) */
 const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -78,12 +81,33 @@ const orgSchema = {
     alternateName: ["Evatech", "Eva Tech Solutions"],
     url: "https://evatechsolutions.in",
     logo: "https://evatechsolutions.in/logo.png",
+
     description:
         "Evatech Solutions LLP is an IT services company offering AI, cloud computing, ERP systems, digitization and automation solutions.",
+
     address: {
         "@type": "PostalAddress",
         addressCountry: "IN",
     },
+
+    /* 🔥 CONTACT POWER SEO */
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+91-9730485222",
+            contactType: "customer support",
+            areaServed: "IN",
+            availableLanguage: ["English", "Hindi"],
+        },
+    ],
+
+    email: "info@evatechsolutions.in",
+    telephone: "+91-9730485222",
+
+    /* 🔥 SOCIAL AUTHORITY BOOST */
+    sameAs: [
+        "https://www.instagram.com/eva_techsolutions",
+    ],
 };
 
 /* 🔥 ABOUT PAGE SCHEMA */
@@ -129,6 +153,14 @@ const faqSchema = {
         },
         {
             "@type": "Question",
+            name: "How can I contact Evatech Solutions?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "You can contact Evatech via email at info@evatechsolutions.in, phone at +91 9730485222 or Instagram @eva_techsolutions.",
+            },
+        },
+        {
+            "@type": "Question",
             name: "Is Evatech an AI and cloud company?",
             acceptedAnswer: {
                 "@type": "Answer",
@@ -149,6 +181,7 @@ const faqSchema = {
 export default function AboutPage() {
     return (
         <>
+            {/* 🔥 STRUCTURED DATA */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}

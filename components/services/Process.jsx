@@ -6,90 +6,92 @@ import {
     Lightbulb,
     Code,
     ShieldCheck,
-    Rocket
+    Rocket,
 } from "lucide-react";
 
 const steps = [
-    {
-        title: "Requirement Analysis",
-        icon: Search,
-    },
-    {
-        title: "Planning & Strategy",
-        icon: Lightbulb,
-    },
-    {
-        title: "Development & Implementation",
-        icon: Code,
-    },
-    {
-        title: "Testing & Optimization",
-        icon: ShieldCheck,
-    },
-    {
-        title: "Deployment & Support",
-        icon: Rocket,
-    },
+    { title: "Requirement Analysis", icon: Search },
+    { title: "Planning & Strategy", icon: Lightbulb },
+    { title: "Development & Implementation", icon: Code },
+    { title: "Testing & Optimization", icon: ShieldCheck },
+    { title: "Deployment & Support", icon: Rocket },
 ];
 
 export default function Process() {
     return (
-        <section className="relative py-20 md:py-28 bg-background overflow-hidden">
+        <section className="relative pt-12 pb-20 sm:pt-14 sm:pb-24 md:pt-16 md:pb-28 bg-primary overflow-hidden">
 
-            {/* GRID BG */}
-            <div className="absolute inset-0 z-0">
-                <div className="w-full h-full 
-                bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)] 
-                bg-[size:42px_42px] opacity-20"></div>
+            {/* 🔥 PREMIUM BACKGROUND */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50" />
+
+                <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-accent/10 blur-3xl rounded-full" />
+                <div className="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-accentSoft/10 blur-3xl rounded-full" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+            <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
 
-                {/* HEADER */}
-                <div className="text-center mb-14">
-                    <h2 className="text-3xl md:text-5xl font-bold text-text">
-                        Our <span className="text-primary">Process</span>
+                {/* 🔥 HEADER */}
+                <div className="text-center mb-12 sm:mb-14">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-semibold text-textPrimary">
+                        Our{" "}
+                        <span className="bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent">
+                            Process
+                        </span>
                     </h2>
 
-                    <p className="text-text-light mt-3 text-sm md:text-base">
-                        A structured approach to deliver scalable and reliable solutions.
+                    <p className="text-textSecondary mt-3 text-sm md:text-base max-w-xl mx-auto">
+                        A structured and scalable workflow ensuring quality, performance,
+                        and long-term reliability.
                     </p>
                 </div>
 
-                {/* SCROLL WRAPPER */}
+                {/* 🔥 SCROLL AREA */}
                 <div className="relative overflow-hidden">
 
+                    {/* FADE EDGES */}
+                    <div className="absolute left-0 top-0 h-full w-16 sm:w-20 bg-gradient-to-r from-white to-transparent z-10" />
+                    <div className="absolute right-0 top-0 h-full w-16 sm:w-20 bg-gradient-to-l from-white to-transparent z-10" />
+
                     <motion.div
-                        className="flex gap-6 w-max"
+                        className="flex gap-4 sm:gap-6 w-max"
                         animate={{ x: ["0%", "-50%"] }}
                         transition={{
                             repeat: Infinity,
-                            duration: 20,
+                            duration: 25,
                             ease: "linear",
                         }}
                     >
 
-                        {/* DUPLICATE FOR INFINITE LOOP */}
                         {[...steps, ...steps].map((step, i) => {
                             const Icon = step.icon;
 
                             return (
                                 <div
                                     key={i}
-                                    className="flex items-center gap-4 px-6 py-4 
-                                    bg-surface border border-border rounded-xl 
-                                    shadow-soft min-w-[260px]"
+                                    className="group relative flex items-center gap-4 px-5 sm:px-6 py-4 
+                  bg-white/80 backdrop-blur-md 
+                  border border-borderSubtle 
+                  rounded-2xl 
+                  shadow-soft hover:shadow-xl 
+                  transition-all duration-300 
+                  min-w-[220px] sm:min-w-[260px]"
                                 >
 
                                     {/* ICON */}
-                                    <div className="text-primary">
-                                        <Icon size={22} />
+                                    <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl 
+                  bg-gradient-to-br from-accent to-accentSoft text-white 
+                  shadow-md group-hover:scale-110 transition duration-300">
+                                        <Icon size={18} />
                                     </div>
 
                                     {/* TEXT */}
-                                    <span className="text-text text-sm font-medium">
+                                    <span className="text-textPrimary text-sm sm:text-base font-medium">
                                         {step.title}
                                     </span>
+
+                                    {/* HOVER GLOW */}
+                                    <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition rounded-2xl" />
 
                                 </div>
                             );

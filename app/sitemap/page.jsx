@@ -1,13 +1,13 @@
 import React from "react";
 
-/* 🔥 SEO METADATA (CRAWL + STRUCTURE BOOST) */
+/* 🔥 SEO METADATA (UPGRADED) */
 export const metadata = {
     metadataBase: new URL("https://evatechsolutions.in"),
 
     title: "Sitemap | Evatech Solutions LLP",
 
     description:
-        "Browse the complete sitemap of Evatech Solutions LLP. Explore all pages including IT services, AI solutions, cloud computing, digitization, ERP systems, and contact information.",
+        "Explore the sitemap of Evatech Solutions LLP. Access all pages including AI, cloud, ERP services. Contact via email info@evatechsolutions.in or phone +91 9730485222.",
 
     keywords: [
         "Evatech sitemap",
@@ -15,6 +15,12 @@ export const metadata = {
         "IT services sitemap",
         "Evatech pages list",
         "AI cloud services navigation",
+
+        // 🔥 CONTACT SEO BOOST
+        "Evatech contact",
+        "Evatech email",
+        "Evatech phone number",
+        "Evatech Instagram",
     ],
 
     alternates: {
@@ -24,7 +30,7 @@ export const metadata = {
     openGraph: {
         title: "Sitemap | Evatech Solutions LLP",
         description:
-            "Navigate all pages of Evatech Solutions LLP including services, company details, and legal pages.",
+            "Browse all pages and services. Contact via email or phone.",
         url: "https://evatechsolutions.in/sitemap",
         siteName: "Evatech Solutions LLP",
         images: [
@@ -43,7 +49,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Sitemap | Evatech Solutions LLP",
         description:
-            "Explore all pages of Evatech Solutions LLP including IT services, AI, cloud and automation solutions.",
+            "Explore all Evatech pages including services and company info.",
         images: ["/og-image.png"],
     },
 
@@ -53,12 +59,50 @@ export const metadata = {
     },
 };
 
-/* 🔥 SCHEMA (BOOST GOOGLE UNDERSTANDING) */
+/* 🔥 SITEMAP SCHEMA */
 const sitemapSchema = {
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
     name: "Website Sitemap",
     url: "https://evatechsolutions.in/sitemap",
+};
+
+/* 🔥 ORGANIZATION (CONTACT + SOCIAL BOOST) */
+const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Evatech Solutions LLP",
+    url: "https://evatechsolutions.in",
+    logo: "https://evatechsolutions.in/logo.png",
+
+    email: "info@evatechsolutions.in",
+    telephone: "+91-9730485222",
+
+    contactPoint: [
+        {
+            "@type": "ContactPoint",
+            telephone: "+91-9730485222",
+            contactType: "customer support",
+            areaServed: "IN",
+            availableLanguage: ["English", "Hindi"],
+        },
+    ],
+
+    sameAs: [
+        "https://www.instagram.com/eva_techsolutions",
+    ],
+};
+
+/* 🔥 HERO SEO (CRAWL BOOST) */
+const heroSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Evatech Solutions LLP",
+    url: "https://evatechsolutions.in",
+    potentialAction: {
+        "@type": "ContactAction",
+        target: "mailto:info@evatechsolutions.in",
+    },
 };
 
 export default function Sitemap() {
@@ -69,7 +113,16 @@ export default function Sitemap() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(sitemapSchema) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(heroSchema) }}
+            />
 
+            {/* 🔥 UI (UNCHANGED) */}
             <div className="max-w-4xl mx-auto px-6 py-20">
                 <h1 className="text-3xl md:text-4xl font-bold mb-6">
                     Sitemap
@@ -82,7 +135,6 @@ export default function Sitemap() {
 
                 <div className="grid gap-8 md:grid-cols-2 text-text">
 
-                    {/* 🔥 MAIN PAGES */}
                     <div>
                         <h2 className="font-semibold mb-3">Main Pages</h2>
                         <ul className="space-y-2 text-text-light">
@@ -93,7 +145,6 @@ export default function Sitemap() {
                         </ul>
                     </div>
 
-                    {/* 🔥 SERVICES (VERY IMPORTANT FOR SEO) */}
                     <div>
                         <h2 className="font-semibold mb-3">Our Services</h2>
                         <ul className="space-y-2 text-text-light">
@@ -108,7 +159,6 @@ export default function Sitemap() {
                         </ul>
                     </div>
 
-                    {/* 🔥 LEGAL */}
                     <div>
                         <h2 className="font-semibold mb-3">Legal</h2>
                         <ul className="space-y-2 text-text-light">
@@ -118,7 +168,6 @@ export default function Sitemap() {
                         </ul>
                     </div>
 
-                    {/* 🔥 EXTRA (OPTIONAL BUT GOOD) */}
                     <div>
                         <h2 className="font-semibold mb-3">Company</h2>
                         <ul className="space-y-2 text-text-light">

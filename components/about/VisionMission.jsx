@@ -5,104 +5,87 @@ import { Eye, Target } from "lucide-react";
 
 export default function VisionMission() {
     return (
-        <section className="relative py-20 md:py-28 bg-background overflow-hidden">
+        <section className="relative py-20 sm:py-24 md:py-28 bg-[#0B1220] overflow-hidden">
 
-            {/* GRID BACKGROUND */}
-            <div className="absolute inset-0 z-0">
-                <div className="w-full h-full 
-                bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)] 
-                bg-[size:42px_42px] opacity-20"></div>
+            {/* 🔥 PREMIUM BACKGROUND */}
+            <div className="absolute inset-0 -z-10">
 
-                {/* GLOW */}
-                <div className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] bg-primary/10 blur-3xl rounded-full"></div>
+                {/* subtle gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0B1220] via-[#0f172a] to-[#111827]" />
+
+                {/* glow */}
+                <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-accent/20 blur-3xl rounded-full"></div>
+                <div className="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-accentSoft/20 blur-3xl rounded-full"></div>
+
             </div>
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
+            <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 md:px-10">
 
-                {/* FIXED HEIGHT GRID */}
-                <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-stretch">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
 
-                    {/* VISION */}
+                    {/* 🔥 VISION */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         whileHover={{ y: -6 }}
-                        transition={{ duration: 0.4 }}
-                        className="group h-full"
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="group rounded-2xl p-[1px] bg-gradient-to-br from-accent to-accentSoft"
                     >
-                        <div className="h-full p-[1px] rounded-2xl 
-                        bg-gradient-to-b from-transparent via-border to-transparent 
-                        hover:from-primary/40 hover:to-primary/20 transition-all duration-500">
+                        <div className="h-full rounded-2xl p-6 md:p-8 bg-gradient-to-br from-accent to-accentSoft text-white flex flex-col gap-5 transition-all duration-300">
 
-                            <div className="h-full flex flex-col justify-between 
-                            bg-surface rounded-2xl p-8 md:p-10 
-                            shadow-soft group-hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-
-                                {/* TOP */}
-                                <div>
-                                    <div className="mb-5 text-primary group-hover:scale-110 transition">
-                                        <Eye size={28} />
-                                    </div>
-
-                                    <h3 className="text-xl md:text-2xl font-bold text-text group-hover:text-primary transition">
-                                        Our Vision
-                                    </h3>
-
-                                    <p className="text-text-light mt-4 leading-relaxed text-sm md:text-base">
-                                        To become a leading global technology partner delivering innovative,
-                                        scalable, and intelligent digital solutions.
-                                    </p>
-                                </div>
-
-                                {/* BOTTOM LINE */}
-                                <div className="mt-6 h-[2px] w-0 bg-primary group-hover:w-16 transition-all duration-500"></div>
-
-                                {/* GLOW */}
-                                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition"></div>
-
+                            {/* ICON */}
+                            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/10 backdrop-blur">
+                                <Eye size={24} />
                             </div>
+
+                            {/* TITLE */}
+                            <h3 className="text-xl md:text-2xl font-semibold">
+                                Our Vision
+                            </h3>
+
+                            {/* DESC */}
+                            <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                                To become a leading global technology partner delivering innovative,
+                                scalable, and intelligent digital solutions.
+                            </p>
+
+                            {/* LINE */}
+                            <div className="mt-auto h-[2px] w-0 bg-white group-hover:w-full transition-all duration-500"></div>
+
                         </div>
                     </motion.div>
 
-                    {/* MISSION */}
+                    {/* 🔥 MISSION */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: 60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         whileHover={{ y: -6 }}
-                        transition={{ duration: 0.4 }}
-                        className="group h-full"
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="group rounded-2xl p-[1px] bg-gradient-to-br from-accent to-accentSoft"
                     >
-                        <div className="h-full p-[1px] rounded-2xl 
-                        bg-gradient-to-b from-transparent via-border to-transparent 
-                        hover:from-primary/40 hover:to-primary/20 transition-all duration-500">
+                        <div className="h-full rounded-2xl p-6 md:p-8 bg-gradient-to-br from-accent to-accentSoft text-white flex flex-col gap-5 transition-all duration-300">
 
-                            <div className="h-full flex flex-col justify-between 
-                            bg-surface rounded-2xl p-8 md:p-10 
-                            shadow-soft group-hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-
-                                {/* TOP */}
-                                <div>
-                                    <div className="mb-5 text-primary group-hover:scale-110 transition">
-                                        <Target size={28} />
-                                    </div>
-
-                                    <h3 className="text-xl md:text-2xl font-bold text-text group-hover:text-primary transition">
-                                        Our Mission
-                                    </h3>
-
-                                    <p className="text-text-light mt-4 leading-relaxed text-sm md:text-base">
-                                        Empower businesses with advanced IT services, AI, cloud solutions,
-                                        and digital transformation strategies.
-                                    </p>
-                                </div>
-
-                                {/* BOTTOM LINE */}
-                                <div className="mt-6 h-[2px] w-0 bg-primary group-hover:w-16 transition-all duration-500"></div>
-
-                                {/* GLOW */}
-                                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition"></div>
-
+                            {/* ICON */}
+                            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/10 backdrop-blur">
+                                <Target size={24} />
                             </div>
+
+                            {/* TITLE */}
+                            <h3 className="text-xl md:text-2xl font-semibold">
+                                Our Mission
+                            </h3>
+
+                            {/* DESC */}
+                            <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                                Empower businesses with advanced IT services, AI, cloud solutions,
+                                and digital transformation strategies.
+                            </p>
+
+                            {/* LINE */}
+                            <div className="mt-auto h-[2px] w-0 bg-white group-hover:w-full transition-all duration-500"></div>
+
                         </div>
                     </motion.div>
 
