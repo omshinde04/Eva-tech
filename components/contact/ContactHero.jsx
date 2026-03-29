@@ -2,17 +2,28 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 export default function ContactHero() {
+    const scrollToForm = () => {
+        const section = document.getElementById("contact-form");
+
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
     return (
         <section className="relative min-h-[65vh] md:min-h-[75vh] flex items-center justify-center bg-background overflow-hidden pt-14 md:pt-0">
 
             {/* GRID BACKGROUND */}
             <div className="absolute inset-0 z-0">
                 <div className="w-full h-full 
-                bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)] 
-                bg-[size:36px_36px] opacity-40"></div>
+        bg-[linear-gradient(to_right,#e3e9ec_1px,transparent_1px),
+        linear-gradient(to_bottom,#e3e9ec_1px,transparent_1px)] 
+        bg-[size:36px_36px] opacity-40"></div>
 
                 {/* LEFT GLOW */}
                 <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-primary/10 blur-3xl rounded-full"></div>
@@ -64,15 +75,18 @@ export default function ContactHero() {
                     transition={{ delay: 0.4 }}
                     className="flex justify-center mt-2"
                 >
-                    <Link
-                        href="#contact-form"
+                    <button
+                        onClick={scrollToForm}
                         className="group bg-primary text-white px-7 py-3 rounded-full 
-                        hover:scale-105 transition-all duration-300 
-                        shadow-lg hover:shadow-2xl flex items-center gap-2"
+            hover:scale-105 transition-all duration-300 
+            shadow-lg hover:shadow-2xl flex items-center gap-2"
                     >
                         Start Project
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
-                    </Link>
+                        <ArrowRight
+                            size={16}
+                            className="group-hover:translate-x-1 transition"
+                        />
+                    </button>
                 </motion.div>
 
                 {/* TRUST */}
@@ -84,7 +98,6 @@ export default function ContactHero() {
                 >
                     Trusted by startups → scaling enterprises
                 </motion.div>
-
             </div>
         </section>
     );

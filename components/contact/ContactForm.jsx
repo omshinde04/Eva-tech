@@ -88,7 +88,10 @@ export default function ContactForm() {
     };
 
     return (
-        <section className="relative py-20 md:py-28 bg-background overflow-hidden">
+        <section
+            id="contact-form"
+            className="relative py-20 md:py-28 bg-background overflow-hidden"
+        >
             {/* GRID BG */}
             <div className="absolute inset-0 z-0 opacity-20">
                 <div className="w-full h-full 
